@@ -6,33 +6,33 @@ erDiagram
 
     PRESTATARIO {
         int id_prestatario PK
-        varchar_100 nombre NOT_NULL
-        varchar_150 correo UK,NOT_NULL
+        varchar nombre
+        varchar correo UK
     }
 
     ESTADO_PRESTAMO {
         int id_estado PK
-        varchar_30 nombre UK,NOT_NULL
+        varchar nombre UK
     }
 
     PRESTAMO {
         int id_prestamo PK
-        int id_prestatario FK,NOT_NULL
-        int id_estado FK,NOT_NULL
-        date fecha_prestamo NOT_NULL
-        date fecha_devolucion_prevista NOT_NULL
-        date fecha_devolucion_real NULL
+        int id_prestatario FK
+        int id_estado FK
+        date fecha_prestamo
+        date fecha_devolucion_prevista
+        date fecha_devolucion_real
     }
 
     EQUIPO {
         int id_equipo PK
-        varchar_50 codigo_equipo UK,NOT_NULL
-        varchar_100 nombre NOT_NULL
-        varchar_50 categoria NOT_NULL
+        varchar codigo_equipo UK
+        varchar nombre
+        varchar categoria
     }
 
     DETALLE_PRESTAMO {
         int id_prestamo PK,FK
         int id_equipo PK,FK
-        int cantidad CHECK_gt_0,NOT_NULL
+        int cantidad
     }
