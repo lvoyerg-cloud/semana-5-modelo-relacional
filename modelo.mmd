@@ -1,0 +1,38 @@
+erDiagram
+    PRESTATARIO ||--o{ PRESTAMO : "registra"
+    PRESTAMO ||--|{ DETALLE_PRESTAMO : "contiene"
+    EQUIPO ||--o{ DETALLE_PRESTAMO : "se presta en"
+    ESTADO_PRESTAMO ||--o{ PRESTAMO : "clasifica"
+
+    PRESTATARIO {
+        int id_prestatario PK
+        varchar_100 nombre NOT_NULL
+        varchar_150 correo UK,NOT_NULL
+    }
+
+    ESTADO_PRESTAMO {
+        int id_estado PK
+        varchar_30 nombre UK,NOT_NULL
+    }
+
+    PRESTAMO {
+        int id_prestamo PK
+        int id_prestatario FK,NOT_NULL
+        int id_estado FK,NOT_NULL
+        date fecha_prestamo NOT_NULL
+        date fecha_devolucion_prevista NOT_NULL
+        date fecha_devolucion_real NULL
+    }
+
+    EQUIPO {
+        int id_equipo PK
+        varchar_50 codigo_equipo UK,NOT_NULL
+        varchar_100 nombre NOT_NULL
+        varchar_50 categoria NOT_NULL
+    }
+
+    DETALLE_PRESTAMO {
+        int id_prestamo PK,FK
+        int id_equipo PK,FK
+        int cantidad CHECK_gt_0,NOT_NULL
+    }
