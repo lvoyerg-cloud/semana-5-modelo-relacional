@@ -1,45 +1,45 @@
-# Sistema de GestiÛn de PrÈstamos de Equipos
-> **Semana 5 ó Modelo Relacional de Base de Datos**
+# Sistema de Gesti√≥n de Pr√©stamos de Equipos
+> **Semana 5 ‚Äî Modelo Relacional de Base de Datos**
 
-Este repositorio contiene la implementaciÛn completa del modelo relacional para un sistema de control y administraciÛn de prÈstamos de equipos, incluyendo la arquitectura de datos en Mermaid, esquemas DDL en SQL, datos de prueba e integraciÛn con contenedores Docker.
+Este repositorio contiene la implementaci√≥n completa del modelo relacional para un sistema de control y administraci√≥n de pr√©stamos de equipos, incluyendo la arquitectura de datos en Mermaid, esquemas DDL en SQL, datos de prueba e integraci√≥n con contenedores Docker.
 
 ---
 
-## ????? InformaciÛn AcadÈmica
+##  Informaci√≥n Acad√©mica
 
 * **Estudiante:** Louis Neil Voyer
-* **CarnÈ:** 2890-24-16741
-* **Universidad:** Universidad Mariano G·lvez de Guatemala (UMG)
-* **Facultad:** IngenierÌa en Sistemas de InformaciÛn y Ciencias de la ComputaciÛn
+* **Carn√©:** 2890-24-16741
+* **Universidad:** Universidad Mariano G√°lvez de Guatemala (UMG)
+* **Facultad:** Ingenier√≠a en Sistemas de Informaci√≥n y Ciencias de la Computaci√≥n
 
 ---
 
-## ?? Estructura del Modelo de Datos
+##  Estructura del Modelo de Datos
 
-El sistema est· diseÒado bajo una arquitectura relacional normalizada compuesta por 5 entidades principales:
+El sistema est√° dise√±ado bajo una arquitectura relacional normalizada compuesta por 5 entidades principales:
 
 1. **`PRESTATARIO`**: Registra los usuarios habilitados para solicitar equipos.
-2. **`ESTADO_PRESTAMO`**: Cat·logo de estados del prÈstamo (ej. *Activo*, *Devuelto*, *Atrasado*).
-3. **`PRESTAMO`**: Cabecera de la transacciÛn de prÈstamo con control de fechas clave.
-4. **`EQUIPO`**: Cat·logo de inventario de equipos disponibles.
-5. **`DETALLE_PRESTAMO`**: Tabla intermedia que resuelve la relaciÛn muchos a muchos entre prÈstamos y equipos, registrando cantidades.
+2. **`ESTADO_PRESTAMO`**: Cat√°logo de estados del pr√©stamo (ej. *Activo*, *Devuelto*, *Atrasado*).
+3. **`PRESTAMO`**: Cabecera de la transacci√≥n de pr√©stamo con control de fechas clave.
+4. **`EQUIPO`**: Cat√°logo de inventario de equipos disponibles.
+5. **`DETALLE_PRESTAMO`**: Tabla intermedia que resuelve la relaci√≥n muchos a muchos entre pr√©stamos y equipos, registrando cantidades.
 
 ---
 
-## ?? Archivos del Repositorio
+##  Archivos del Repositorio
 
-| Archivo | DescripciÛn |
+| Archivo | Descripci√≥n |
 | :--- | :--- |
-| `modelo.mmd` | Diagrama Entidad-RelaciÛn (ER) escrito en sintaxis ejecutable de Mermaid. |
-| `schema.sql` | Script DDL para la creaciÛn de tablas, relaciones y restricciones (`PK`, `FK`, `UK`). |
-| `seed.sql` | Script DML con datos iniciales para pruebas de inserciÛn e integridad. |
-| `validation.sql` | Consultas SQL de validaciÛn y comprobaciÛn de integridad referencial. |
-| `compose.yaml` | Archivo de orquestaciÛn para levantar la base de datos PostgreSQL en Docker. |
-| `.env.ejemplo` | Plantilla de variables de entorno para configuraciÛn del contenedor. |
+| `modelo.mmd` | Diagrama Entidad-Relaci√≥n (ER) escrito en sintaxis ejecutable de Mermaid. |
+| `schema.sql` | Script DDL para la creaci√≥n de tablas, relaciones y restricciones (`PK`, `FK`, `UK`). |
+| `seed.sql` | Script DML con datos iniciales para pruebas de inserci√≥n e integridad. |
+| `validation.sql` | Consultas SQL de validaci√≥n y comprobaci√≥n de integridad referencial. |
+| `compose.yaml` | Archivo de orquestaci√≥n para levantar la base de datos PostgreSQL en Docker. |
+| `.env.ejemplo` | Plantilla de variables de entorno para configuraci√≥n del contenedor. |
 
 ---
 
-## ?? GuÌa de Despliegue R·pido
+##  Gu√≠a de Despliegue R√°pido
 
 ### 1. Clonar el repositorio
 ```bash
